@@ -7,25 +7,21 @@ function APICall(){
     return response.json();
   })
   .then(data => {
-    console.log(data.current.temp_c, "°C");
     const TempText = document.getElementById("temp")
+    const Planet = document.getElementById("planet")
+    const bodyElement = document.querySelector("body");
+    
     TempText.textContent = data.current.temp_c + "°C"
     if(data.current.temp_c <= 2){
-      const Planet = document.getElementById("planet")
       Planet.textContent = "Hoth"
-      const bodyElement = document.querySelector("body");
       bodyElement.style.backgroundImage = "url('hoth.webp')";
     }
     else if (data.current.temp_c > 2 && data.current.temp_c < 15){
-      const Planet = document.getElementById("planet")
-      Planet.textContent = "Kashyyyk"
-      const bodyElement = document.querySelector("body");
+      Planet.textContent = "Kashyyyk",
       bodyElement.style.backgroundImage = "url('kashyyyk.jpg')";
     }
     else if (data.current.temp_c >= 15){
-      const Planet = document.getElementById("planet")
       Planet.textContent = "Tatooine"
-      const bodyElement = document.querySelector("body");
       bodyElement.style.backgroundImage = "url('tatooine.jpg')";
     }
 
