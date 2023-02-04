@@ -12,6 +12,7 @@ function APICall(){
     const bodyElement = document.querySelector("body");
     
     TempText.textContent = data.current.temp_c + "°C"
+    
     if(data.current.temp_c <= 2){
       Planet.textContent = "Hoth"
       bodyElement.style.backgroundImage = "url('hoth.webp')";
