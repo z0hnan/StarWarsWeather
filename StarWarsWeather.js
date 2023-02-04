@@ -10,9 +10,17 @@ function APICall(){
     console.log(data.current.temp_c, "°C");
     const TempText = document.getElementById("temp")
     TempText.textContent = data.current.temp_c + "°C"
-    if(data.current.temp_c <= 0){
+    if(data.current.temp_c <= 2){
       const Planet = document.getElementById("planet")
       Planet.textContent = "Hoth"
+    }
+    else if (data.current.temp_c > 2 && data.current.temp_c < 15){
+      const Planet = document.getElementById("planet")
+      Planet.textContent = "Kashyyyk"
+    }
+    else if (data.current.temp_c >= 15){
+      const Planet = document.getElementById("planet")
+      Planet.textContent = "Tatooine"
     }
 
   })
