@@ -13,14 +13,20 @@ function APICall(){
     if(data.current.temp_c <= 2){
       const Planet = document.getElementById("planet")
       Planet.textContent = "Hoth"
+      const bodyElement = document.querySelector("body");
+      bodyElement.style.backgroundImage = "url('hoth.webp')";
     }
     else if (data.current.temp_c > 2 && data.current.temp_c < 15){
       const Planet = document.getElementById("planet")
       Planet.textContent = "Kashyyyk"
+      const bodyElement = document.querySelector("body");
+      bodyElement.style.backgroundImage = "url('kashyyyk.jpg')";
     }
     else if (data.current.temp_c >= 15){
       const Planet = document.getElementById("planet")
       Planet.textContent = "Tatooine"
+      const bodyElement = document.querySelector("body");
+      bodyElement.style.backgroundImage = "url('tatooine.jpg')";
     }
 
   })
@@ -31,5 +37,5 @@ function APICall(){
 
 const interval = 60 * 60 * 1000;
 setInterval(APICall, interval);
-
-window.onload = APICall;
+APICall();
+//window.onload = APICall;
