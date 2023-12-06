@@ -1,5 +1,5 @@
 function APICall(){
-  fetch("https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/current.json?key=27c58c1cd520412b915144718230402&q=Randers&aqi=no")
+  fetch("http://api.weatherapi.com/v1/current.json?key=27c58c1cd520412b915144718230402&q=Randers&aqi=no")
   .then(response => {
     if (!response.ok) {
       throw new Error("Network response was not ok");
